@@ -1,5 +1,6 @@
 # coding=utf-8
 from __future__ import absolute_import
+import multiprocessing
 
 __author__ = "Gina Häußge <osd@foosel.net>, Javier Martínez Arrieta <martinezarrietajavier@gmail.com>"
 __license__ = 'GNU Affero General Public License http://www.gnu.org/licenses/agpl.html'
@@ -181,7 +182,7 @@ defaults = dict(
     solid_infill_extruder = 1,
     support_material_contact_distance = 0.2,
     use_volumetric_e = 0,  				# 0 (unchecked) or 1 (checked)
-    threads = 2,
+    threads = min(multiprocessing.cpu_count() + 1, 16),
     first_layer_bed_temperature = 90,
     interface_shells = 0, 				# 0 (unchecked) or 1 (checked)
     post_processing = None,
