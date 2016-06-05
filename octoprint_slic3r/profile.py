@@ -185,7 +185,6 @@ defaults = dict(
     threads = min(multiprocessing.cpu_count() + 1, 16),
     first_layer_bed_temperature = 90,
     interface_shells = 0, 				# 0 (unchecked) or 1 (checked)
-    post_processing = None,
     solid_fill_pattern = FillPatterns.RECTILINEAR,
     g0 = 0,						# 0 (unchecked) or 1 (checked)
     duplicate = 1,
