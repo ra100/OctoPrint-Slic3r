@@ -194,6 +194,9 @@ class Slic3rPlugin(octoprint.plugin.SlicerPlugin,
 		if position and isinstance(position, dict) and "x" in position and "y" in position:
 			posX = position["x"]
 			posY = position["y"]
+		elif printer_profile["volume"]["formFactor"] == "circular" or printer_profile["volume"]["origin"] == "center" :
+			posX = 0
+			posY = 0
 		else:
 			posX = printer_profile["volume"]["width"] / 2.0
 			posY = printer_profile["volume"]["depth"] / 2.0
